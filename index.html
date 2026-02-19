@@ -207,18 +207,18 @@ input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;hei
 .tr808-chain-btn.active{border-color:#44cc66;color:#44cc66;background:#0a1a0f;box-shadow:0 0 6px rgba(68,204,102,0.2)}
 
 /* =============== LIVE LOOPER =============== */
-.looper-panel{max-width:980px;width:100%;margin-top:24px;background:#14141e;border:1px solid #252538;border-radius:16px;padding:20px;transition:border-color 0.3s}
+.looper-panel{width:100%;margin:0;background:#14141e;border:1px solid #252538;border-radius:16px;padding:14px 10px;transition:border-color 0.3s}
 .looper-panel.recording{border-color:#ff3333;box-shadow:0 0 25px rgba(255,51,51,0.1)}
-.looper-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.looper-header{display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:16px}
 .looper-title{font-size:10px;letter-spacing:6px;text-transform:uppercase;color:#777;font-weight:300}
-.looper-master{display:flex;align-items:center;gap:12px}
+.looper-master{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center}
 .looper-time{font-family:'Courier New',monospace;font-size:16px;color:#6366f1;font-weight:700;min-width:60px;text-align:right}
 .looper-time.rec{color:#ff3333;animation:recBlink 1s ease infinite}
 @keyframes recBlink{0%,100%{opacity:1}50%{opacity:0.4}}
 .looper-master-btn{padding:6px 16px;border:1px solid #333348;border-radius:6px;background:#222235;color:#999;font-family:inherit;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all 0.15s}
 .looper-master-btn:hover{border-color:#4338ca;color:#aaa}
-.looper-tracks{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.loop-track{background:#181822;border:1px solid #252538;border-radius:12px;padding:16px 12px;display:flex;flex-direction:column;align-items:center;gap:8px;transition:all 0.3s}
+.looper-tracks{display:flex;flex-direction:column;gap:10px}
+.loop-track{background:#181822;border:1px solid #252538;border-radius:12px;padding:10px 8px;display:flex;flex-direction:column;align-items:center;gap:8px;transition:all 0.3s}
 .loop-track.recording{border-color:#ff3333;box-shadow:0 0 20px rgba(255,51,51,0.12)}
 .loop-track.has-audio{border-color:#2a2a4e}
 .loop-track-label{font-size:8px;letter-spacing:3px;color:#999;text-transform:uppercase}
@@ -227,8 +227,8 @@ input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;hei
 .loop-status.rec{color:#ff3333}
 .loop-status.play{color:#6366f1}
 .loop-status.muted{color:#ffaa00}
-.loop-btns{display:flex;gap:5px}
-.loop-btn{width:38px;height:26px;border:1px solid #333348;border-radius:5px;background:#222235;color:#777;font-family:inherit;font-size:7px;font-weight:700;letter-spacing:1px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.15s}
+.loop-btns{display:flex;gap:5px;width:100%}
+.loop-btn{flex:1;height:26px;border:1px solid #333348;border-radius:5px;background:#222235;color:#777;font-family:inherit;font-size:7px;font-weight:700;letter-spacing:1px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.15s}
 .loop-btn:hover{border-color:#777;color:#aaa}
 .loop-btn.rec-btn{color:#ff3333;border-color:#3a1a1a}
 .loop-btn.rec-btn:hover{background:#2a1a1a;border-color:#ff3333}
@@ -274,6 +274,21 @@ input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;hei
 .pedal.active .pedal-stomp{border-color:var(--pedal-color);box-shadow:0 3px 10px rgba(0,0,0,0.5),0 0 10px var(--pedal-glow);color:#888}
 .pedal-brand{position:absolute;bottom:6px;font-size:5px;letter-spacing:3px;color:rgba(255,255,255,0.06);text-transform:uppercase}
 
+/* =============== TWO-COLUMN LAYOUT =============== */
+.main-layout{display:flex;gap:20px;width:100%;max-width:1660px;align-items:flex-start;justify-content:center}
+.main-content{flex:1;display:flex;flex-direction:column;align-items:center;min-width:0}
+.looper-sidebar{width:240px;flex-shrink:0;position:sticky;top:20px}
+
+@media(max-width:1200px){
+    .main-layout{flex-direction:column;align-items:center}
+    .looper-sidebar{width:100%;max-width:980px;position:static}
+    .looper-tracks{display:grid!important;grid-template-columns:repeat(4,1fr)!important}
+    .looper-panel{max-width:980px!important}
+    .looper-header{flex-direction:row!important;justify-content:space-between!important;flex-wrap:wrap}
+    .looper-master{flex-wrap:nowrap!important}
+    .looper-panel{padding:20px!important}
+}
+
 .hidden{display:none!important}
 </style>
 </head>
@@ -287,6 +302,9 @@ input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;hei
 </div>
 
 <h1 id="title">Synthesizer</h1>
+
+<div class="main-layout">
+<div class="main-content">
 
 <!-- Shared Controls (hidden in 808 mode) -->
 <div class="controls" id="synthControls">
@@ -409,20 +427,25 @@ input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;hei
     </div>
 </div>
 
+</div><!-- /main-content -->
+
+<div class="looper-sidebar">
 <!-- Live Looper (always visible) -->
 <div class="looper-panel" id="looperPanel">
     <div class="looper-header">
         <span class="looper-title">Live Looper</span>
+        <span class="looper-time" id="looperTime">--</span>
         <div class="looper-master">
-            <span class="looper-time" id="looperTime">--</span>
             <button class="looper-master-btn" id="looperStopBtn">Stop</button>
             <button class="looper-master-btn" id="looperClearBtn">Clear</button>
             <button class="looper-master-btn" id="looperSaveBtn" style="color:#22cc44;border-color:#1a3a1a">Save WAV</button>
         </div>
     </div>
     <div class="looper-tracks" id="looperTracks"></div>
-    <div class="info" style="margin-top:12px">Keys 1-4 = Record Track &middot; 0 = Stop All &middot; &minus; = Clear All</div>
+    <div class="info" style="margin-top:12px">1-4 = Rec &middot; 0 = Stop &middot; &minus; = Clear</div>
 </div>
+</div><!-- /looper-sidebar -->
+</div><!-- /main-layout -->
 
 <script>
 // ==================== SHARED AUDIO ENGINE ====================
@@ -1342,7 +1365,7 @@ function buildLooperUI() {
         div.id = 'loopTrack' + i;
         div.innerHTML = `
             <span class="loop-track-label">Track ${i+1}</span>
-            <canvas class="loop-canvas" id="loopCanvas${i}" width="240" height="240" style="width:120px;height:120px"></canvas>
+            <canvas class="loop-canvas" id="loopCanvas${i}" width="160" height="160" style="width:80px;height:80px"></canvas>
             <div class="loop-status" id="loopStatus${i}">Empty</div>
             <div class="loop-btns">
                 <button class="loop-btn rec-btn" id="loopRec${i}" data-idx="${i}">REC</button>
@@ -1476,26 +1499,26 @@ function drawLooper() {
         const c = canvas.getContext('2d');
         c.save();
         c.scale(2, 2); // Retina
-        const w = 120, h = 120, cx = 60, cy = 60;
+        const w = 80, h = 80, cx = 40, cy = 40;
         const track = loopState.tracks[i];
         c.clearRect(0, 0, w, h);
 
         // Outer ring
         c.beginPath();
-        c.arc(cx, cy, 54, 0, Math.PI * 2);
+        c.arc(cx, cy, 36, 0, Math.PI * 2);
         c.strokeStyle = track.hasAudio ? 'rgba(99,102,241,0.25)' : 'rgba(255,255,255,0.04)';
         c.lineWidth = 1.5;
         c.stroke();
 
         // Inner circle
         c.beginPath();
-        c.arc(cx, cy, 14, 0, Math.PI * 2);
+        c.arc(cx, cy, 9, 0, Math.PI * 2);
         c.fillStyle = loopState.activeRecTrack === i ? 'rgba(255,51,51,0.6)' : 'rgba(255,255,255,0.02)';
         c.fill();
 
         // Track number in center
         c.fillStyle = loopState.activeRecTrack === i ? '#ff3333' : '#333';
-        c.font = 'bold 14px Helvetica Neue';
+        c.font = 'bold 10px Helvetica Neue';
         c.textAlign = 'center';
         c.textBaseline = 'middle';
         c.fillText(i + 1, cx, cy + 1);
@@ -1512,7 +1535,7 @@ function drawLooper() {
                     let sum = 0;
                     for (let j = 0; j < sps; j++) sum += Math.abs(data[s * sps + j]);
                     const avg = sum / sps;
-                    const r = 22 + Math.min(avg * 80, 30);
+                    const r = 15 + Math.min(avg * 53, 20);
                     const x = cx + Math.cos(angle) * r;
                     const y = cy + Math.sin(angle) * r;
                     s === 0 ? c.moveTo(x, y) : c.lineTo(x, y);
@@ -1534,7 +1557,7 @@ function drawLooper() {
             const progress = Math.min(elapsed / maxDur, 1);
             const pulse = 0.5 + 0.5 * Math.sin(Date.now() / 150);
             c.beginPath();
-            c.arc(cx, cy, 54, -Math.PI / 2, -Math.PI / 2 + progress * Math.PI * 2);
+            c.arc(cx, cy, 36, -Math.PI / 2, -Math.PI / 2 + progress * Math.PI * 2);
             c.strokeStyle = `rgba(255,51,51,${0.5 + pulse * 0.5})`;
             c.lineWidth = 3;
             c.stroke();
@@ -1546,13 +1569,13 @@ function drawLooper() {
             const progress = (elapsed % loopState.masterDuration) / loopState.masterDuration;
             const angle = progress * Math.PI * 2 - Math.PI / 2;
             c.beginPath();
-            c.moveTo(cx + Math.cos(angle) * 16, cy + Math.sin(angle) * 16);
-            c.lineTo(cx + Math.cos(angle) * 54, cy + Math.sin(angle) * 54);
+            c.moveTo(cx + Math.cos(angle) * 11, cy + Math.sin(angle) * 11);
+            c.lineTo(cx + Math.cos(angle) * 36, cy + Math.sin(angle) * 36);
             c.strokeStyle = 'rgba(255,255,255,0.85)';
             c.lineWidth = 1.5;
             c.stroke();
             c.beginPath();
-            c.arc(cx + Math.cos(angle) * 54, cy + Math.sin(angle) * 54, 2.5, 0, Math.PI * 2);
+            c.arc(cx + Math.cos(angle) * 36, cy + Math.sin(angle) * 36, 2, 0, Math.PI * 2);
             c.fillStyle = '#fff';
             c.fill();
         }
