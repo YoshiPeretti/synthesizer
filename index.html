@@ -102,34 +102,34 @@ input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;hei
 
 /* =============== TR-808 DRUM MACHINE =============== */
 .tr808-shell{
-    max-width:980px;width:100%;margin-top:10px;position:relative;overflow:hidden;
+    max-width:1400px;width:100%;margin-top:10px;position:relative;
     background:linear-gradient(180deg,#2c2c2c 0%,#222 100%);
-    border-radius:16px;
+    border-radius:20px;
     box-shadow:0 14px 50px rgba(0,0,0,0.7),inset 0 1px 0 rgba(255,255,255,0.06);
 }
 /* Iconic gradient strip */
 .tr808-strip{
-    height:6px;
+    height:8px;border-radius:20px 20px 0 0;
     background:linear-gradient(90deg,#cc2222 0%,#dd5522 25%,#ee8822 50%,#eebb22 75%,#ddcc22 100%);
 }
 .tr808-header{
-    padding:16px 24px 10px;display:flex;justify-content:space-between;align-items:center;
+    padding:20px 32px 14px;display:flex;justify-content:space-between;align-items:center;
 }
-.tr808-brand{display:flex;align-items:baseline;gap:12px}
-.tr808-roland{font-size:9px;font-weight:700;letter-spacing:4px;color:#999;text-transform:uppercase}
-.tr808-name{font-size:26px;font-weight:800;letter-spacing:6px;color:#ee8822;text-transform:uppercase;
+.tr808-brand{display:flex;align-items:baseline;gap:16px}
+.tr808-roland{font-size:12px;font-weight:700;letter-spacing:5px;color:#999;text-transform:uppercase}
+.tr808-name{font-size:36px;font-weight:800;letter-spacing:8px;color:#ee8822;text-transform:uppercase;
     text-shadow:0 0 20px rgba(238,136,34,0.3)}
-.tr808-sub{font-size:8px;letter-spacing:5px;color:#999;text-transform:uppercase}
+.tr808-sub{font-size:10px;letter-spacing:6px;color:#999;text-transform:uppercase}
 
 /* Transport & controls */
 .tr808-controls{
     display:flex;align-items:center;justify-content:space-between;
-    padding:0 24px 14px;gap:16px;
+    padding:0 32px 18px;gap:20px;flex-wrap:wrap;
 }
-.tr808-transport{display:flex;gap:8px}
+.tr808-transport{display:flex;gap:10px}
 .tr808-play-btn{
-    padding:8px 24px;border:none;border-radius:6px;cursor:pointer;
-    font-family:inherit;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+    padding:12px 32px;border:none;border-radius:8px;cursor:pointer;
+    font-family:inherit;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
     transition:all 0.15s;
 }
 .tr808-play-btn.play{background:#22aa44;color:#fff;box-shadow:0 0 12px rgba(34,170,68,0.3)}
@@ -140,42 +140,71 @@ input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;hei
 .tr808-play-btn.clear{background:#333;color:#999;box-shadow:none}
 .tr808-play-btn.clear:hover{color:#ccc;background:#444}
 
-.tr808-tempo-area{display:flex;align-items:center;gap:10px}
-.tr808-tempo-area label{font-size:7px;letter-spacing:2px;color:#999;text-transform:uppercase}
-.tr808-tempo-area input[type="range"]{width:100px;height:4px;background:#333}
-.tr808-tempo-area input[type="range"]::-webkit-slider-thumb{background:radial-gradient(circle at 40% 35%,#ee8822,#cc6611);box-shadow:0 0 8px rgba(238,136,34,0.4)}
-.tr808-tempo-val{font-size:18px;font-weight:700;color:#ee8822;min-width:40px;font-family:'Courier New',monospace}
+.tr808-tempo-area{display:flex;align-items:center;gap:12px}
+.tr808-tempo-area label{font-size:10px;letter-spacing:2px;color:#999;text-transform:uppercase}
+.tr808-tempo-area input[type="range"]{width:130px;height:6px;background:#333}
+.tr808-tempo-area input[type="range"]::-webkit-slider-thumb{width:22px;height:22px;background:radial-gradient(circle at 40% 35%,#ee8822,#cc6611);box-shadow:0 0 8px rgba(238,136,34,0.4)}
+.tr808-tempo-val{font-size:24px;font-weight:700;color:#ee8822;min-width:50px;font-family:'Courier New',monospace}
 
-.tr808-swing-area{display:flex;align-items:center;gap:8px}
-.tr808-swing-area label{font-size:7px;letter-spacing:2px;color:#999;text-transform:uppercase}
-.tr808-swing-area input[type="range"]{width:60px;height:4px;background:#333}
-.tr808-swing-area input[type="range"]::-webkit-slider-thumb{background:radial-gradient(circle at 40% 35%,#ee8822,#cc6611);box-shadow:0 0 6px rgba(238,136,34,0.3)}
+.tr808-swing-area{display:flex;align-items:center;gap:10px}
+.tr808-swing-area label{font-size:10px;letter-spacing:2px;color:#999;text-transform:uppercase}
+.tr808-swing-area input[type="range"]{width:80px;height:6px;background:#333}
+.tr808-swing-area input[type="range"]::-webkit-slider-thumb{width:20px;height:20px;background:radial-gradient(circle at 40% 35%,#ee8822,#cc6611);box-shadow:0 0 6px rgba(238,136,34,0.3)}
 
 /* Step sequencer grid */
-.tr808-grid{padding:0 16px 20px;position:relative}
+.tr808-grid{padding:0 24px 28px;position:relative}
 /* Step number row */
-.tr808-step-nums{display:flex;padding-left:60px;margin-bottom:4px}
-.tr808-step-num{flex:1;text-align:center;font-size:7px;color:#999;font-weight:600}
+.tr808-step-nums{display:flex;margin-bottom:6px}
+.tr808-step-num{flex:1;text-align:center;font-size:10px;color:#999;font-weight:600}
 /* Step indicator LEDs */
-.tr808-leds{display:flex;padding-left:60px;margin-bottom:8px}
+.tr808-leds{display:flex;margin-bottom:10px}
 .tr808-led{flex:1;display:flex;justify-content:center}
-.tr808-led-dot{width:6px;height:6px;border-radius:50%;background:#1a1a1a;border:1px solid #333;transition:all 0.05s}
-.tr808-led-dot.active{background:#ff4444;box-shadow:0 0 8px rgba(255,68,68,0.6);border-color:#ff4444}
+.tr808-led-dot{width:10px;height:10px;border-radius:50%;background:#1a1a1a;border:1px solid #333;transition:all 0.05s}
+.tr808-led-dot.active{background:#ff4444;box-shadow:0 0 12px rgba(255,68,68,0.6);border-color:#ff4444}
 /* Instrument rows */
-.tr808-inst-row{display:flex;align-items:center;margin-bottom:3px}
-.tr808-inst-label{width:60px;font-size:8px;font-weight:700;letter-spacing:1px;text-align:right;padding-right:10px;flex-shrink:0}
-.tr808-steps{display:flex;flex:1;gap:3px}
+.tr808-inst-row{display:flex;align-items:center;margin-bottom:5px}
+.tr808-steps{display:flex;flex:1;gap:4px}
 .tr808-step{
-    flex:1;height:32px;border-radius:4px;cursor:pointer;
-    border:1px solid #333;background:#1a1a1a;
+    flex:1;height:44px;border-radius:6px;cursor:pointer;
+    border:2px solid #333;background:#1a1a1a;
     transition:all 0.08s;position:relative;
 }
 .tr808-step:hover{border-color:#777;background:#222}
-.tr808-step.on{border-color:var(--inst-color);background:var(--inst-color);box-shadow:0 0 8px var(--inst-glow)}
+.tr808-step.on{border-color:var(--inst-color);background:var(--inst-color);box-shadow:0 0 10px var(--inst-glow)}
 .tr808-step.beat{border-color:#333;background:#1e1e1e}
 /* Beat grouping (visual every 4 steps) */
-.tr808-step:nth-child(4n+1){margin-left:4px}
+.tr808-step:nth-child(4n+1){margin-left:6px}
 .tr808-step:first-child{margin-left:0}
+
+/* Accent steps */
+.tr808-step.on.accent{box-shadow:0 0 18px var(--inst-glow),inset 0 0 10px rgba(255,255,255,0.3);border-width:3px}
+.tr808-step.accent:not(.on){border-style:dashed;border-color:#555}
+
+/* Per-instrument controls */
+.tr808-inst-controls{display:flex;gap:3px;align-items:center;margin-left:4px;flex-shrink:0;width:100px}
+.tr808-mini-knob{display:flex;flex-direction:column;align-items:center;gap:0px}
+.tr808-mini-knob label{font-size:6px;letter-spacing:0.5px;color:#555;text-transform:uppercase;line-height:1}
+.tr808-mini-knob input[type="range"]{-webkit-appearance:none;width:28px;height:3px;background:#333;border-radius:2px;outline:none;margin:0;padding:0}
+.tr808-mini-knob input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:10px;height:10px;background:radial-gradient(circle at 40% 35%,#888,#555);border-radius:50%;cursor:pointer;box-shadow:0 0 3px rgba(0,0,0,0.5)}
+.tr808-inst-label{width:50px;font-size:11px;font-weight:700;letter-spacing:1px;text-align:right;padding-right:6px;flex-shrink:0}
+
+/* Preset buttons */
+.tr808-presets{display:flex;gap:8px;padding:0 24px 14px;flex-wrap:wrap;align-items:center}
+.tr808-presets-label{font-size:10px;letter-spacing:2px;color:#666;text-transform:uppercase;margin-right:6px}
+.tr808-preset-btn{padding:8px 16px;border:1px solid #333;border-radius:6px;background:#1a1a1a;color:#999;font-family:inherit;font-size:11px;font-weight:600;letter-spacing:1px;cursor:pointer;transition:all 0.12s}
+.tr808-preset-btn:hover{border-color:#ee8822;color:#ee8822;background:#221a10}
+.tr808-preset-btn.active{border-color:#ee8822;color:#fff;background:#ee8822;box-shadow:0 0 8px rgba(238,136,34,0.3)}
+
+/* A/B Pattern banks */
+.tr808-banks{display:flex;gap:8px;align-items:center}
+.tr808-bank-btn{padding:10px 20px;border:1px solid #333;border-radius:6px;background:#1a1a1a;color:#999;font-family:inherit;font-size:14px;font-weight:800;letter-spacing:2px;cursor:pointer;transition:all 0.12s}
+.tr808-bank-btn:hover{border-color:#ee8822;color:#ee8822}
+.tr808-bank-btn.active{border-color:#ee8822;color:#fff;background:linear-gradient(180deg,#ee8822,#cc6611);box-shadow:0 0 10px rgba(238,136,34,0.3)}
+.tr808-bank-led{width:10px;height:10px;border-radius:50%;background:#1a1a1a;border:1px solid #333;transition:all 0.15s;margin-right:2px}
+.tr808-bank-led.active{background:#ff4444;box-shadow:0 0 8px rgba(255,68,68,0.5);border-color:#ff4444}
+.tr808-chain-btn{padding:8px 16px;border:1px solid #333;border-radius:6px;background:#1a1a1a;color:#777;font-family:inherit;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all 0.12s}
+.tr808-chain-btn:hover{border-color:#ee8822;color:#ee8822}
+.tr808-chain-btn.active{border-color:#44cc66;color:#44cc66;background:#0a1a0f;box-shadow:0 0 6px rgba(68,204,102,0.2)}
 
 /* =============== LIVE LOOPER =============== */
 .looper-panel{max-width:980px;width:100%;margin-top:24px;background:#14141e;border:1px solid #252538;border-radius:16px;padding:20px;transition:border-color 0.3s}
@@ -336,13 +365,28 @@ input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;hei
                 <span class="tr808-tempo-val" id="tr808TempoVal">120</span>
             </div>
             <div class="tr808-swing-area">
+                <label>Swing</label>
+                <input type="range" id="tr808Swing" min="0" max="100" value="0">
+                <span style="font-size:14px;color:#ee8822;min-width:36px;font-family:'Courier New',monospace" id="tr808SwingVal">0%</span>
+            </div>
+            <div class="tr808-swing-area">
                 <label>Volume</label>
                 <input type="range" id="tr808Vol" min="0" max="100" value="80">
             </div>
         </div>
+        <div class="tr808-controls" style="justify-content:center">
+            <div class="tr808-banks">
+                <div class="tr808-bank-led active" id="tr808LedA"></div>
+                <button class="tr808-bank-btn active" id="tr808BankA">A</button>
+                <button class="tr808-bank-btn" id="tr808BankB">B</button>
+                <div class="tr808-bank-led" id="tr808LedB"></div>
+                <button class="tr808-chain-btn" id="tr808ChainBtn">Chain</button>
+            </div>
+        </div>
+        <div class="tr808-presets" id="tr808Presets"></div>
         <div class="tr808-grid" id="tr808Grid"></div>
     </div>
-    <div class="info" style="margin-top:16px">Click steps to program &middot; Hit play to hear your beat</div>
+    <div class="info" style="margin-top:16px">Click steps to program &middot; Shift-click for accent &middot; A/B banks &middot; Chain for 32-step loop</div>
 </div>
 
 <!-- Effects Pedalboard -->
@@ -501,97 +545,148 @@ const instruments808 = [
     { id:'CY', name:'Cymbal',    color:'#aaddff', glow:'rgba(170,221,255,0.4)' },
 ];
 
-const pattern808 = {};
-instruments808.forEach(inst => { pattern808[inst.id] = new Array(16).fill(false); });
+// Per-instrument params: pitch (cents offset), decay (multiplier), volume (0-1)
+const instParams808 = {};
+instruments808.forEach(inst => {
+    instParams808[inst.id] = { pitch: 0, decay: 1.0, volume: 1.0 };
+});
+
+// A/B Pattern banks
+const patternBanks = {
+    A: { pattern: {}, accent: {} },
+    B: { pattern: {}, accent: {} }
+};
+instruments808.forEach(inst => {
+    patternBanks.A.pattern[inst.id] = new Array(16).fill(false);
+    patternBanks.A.accent[inst.id] = new Array(16).fill(false);
+    patternBanks.B.pattern[inst.id] = new Array(16).fill(false);
+    patternBanks.B.accent[inst.id] = new Array(16).fill(false);
+});
+let activeBank = 'A';
+let chainMode = false;
+
+// Active references (point to current bank)
+let pattern808 = patternBanks.A.pattern;
+let accent808 = patternBanks.A.accent;
+
 let bpm808 = 120, currentStep808 = 0, isPlaying808 = false, stepTimeout808 = null;
+let swing808 = 0; // 0-100
 
-// 808 Drum Synthesis
-function play808BD(t){
+// 808 Drum Synthesis — all functions accept (time, gainMul, params)
+// params = { pitch: cents, decay: multiplier, volume: 0-1 }
+function play808BD(t, gainMul, p){
+    const pm = p||instParams808.BD, vol=pm.volume*(gainMul||1), dec=pm.decay, pitchR=Math.pow(2,pm.pitch/1200);
+    const vg=ctx.createGain();vg.gain.value=vol;vg.connect(drumMaster);
     const o=ctx.createOscillator(),g=ctx.createGain();
-    o.frequency.setValueAtTime(160,t);o.frequency.exponentialRampToValueAtTime(28,t+0.09);
-    g.gain.setValueAtTime(1.2,t);g.gain.exponentialRampToValueAtTime(0.001,t+0.45);
-    o.connect(g);g.connect(drumMaster);o.start(t);o.stop(t+0.45);
-    // Click transient
+    o.frequency.setValueAtTime(160*pitchR,t);o.frequency.exponentialRampToValueAtTime(28*pitchR,t+0.09*dec);
+    g.gain.setValueAtTime(1.2,t);g.gain.exponentialRampToValueAtTime(0.001,t+0.45*dec);
+    o.connect(g);g.connect(vg);o.start(t);o.stop(t+0.45*dec);
     const o2=ctx.createOscillator(),g2=ctx.createGain();
-    o2.frequency.value=400;g2.gain.setValueAtTime(0.6,t);g2.gain.exponentialRampToValueAtTime(0.001,t+0.02);
-    o2.connect(g2);g2.connect(drumMaster);o2.start(t);o2.stop(t+0.02);
+    o2.frequency.value=400*pitchR;g2.gain.setValueAtTime(0.6,t);g2.gain.exponentialRampToValueAtTime(0.001,t+0.02);
+    o2.connect(g2);g2.connect(vg);o2.start(t);o2.stop(t+0.02);
 }
-function play808SD(t){
+function play808SD(t, gainMul, p){
+    const pm=p||instParams808.SD, vol=pm.volume*(gainMul||1), dec=pm.decay, pitchR=Math.pow(2,pm.pitch/1200);
+    const vg=ctx.createGain();vg.gain.value=vol;vg.connect(drumMaster);
     const o=ctx.createOscillator(),og=ctx.createGain();
-    o.frequency.setValueAtTime(220,t);o.frequency.exponentialRampToValueAtTime(90,t+0.04);
-    og.gain.setValueAtTime(0.6,t);og.gain.exponentialRampToValueAtTime(0.001,t+0.12);
-    o.connect(og);og.connect(drumMaster);o.start(t);o.stop(t+0.12);
+    o.frequency.setValueAtTime(220*pitchR,t);o.frequency.exponentialRampToValueAtTime(90*pitchR,t+0.04*dec);
+    og.gain.setValueAtTime(0.6,t);og.gain.exponentialRampToValueAtTime(0.001,t+0.12*dec);
+    o.connect(og);og.connect(vg);o.start(t);o.stop(t+0.12*dec);
     const ns=ctx.createBufferSource(),nf=ctx.createBiquadFilter(),ng=ctx.createGain();
-    ns.buffer=noiseBuffer;nf.type='highpass';nf.frequency.value=2000;
-    ng.gain.setValueAtTime(0.45,t);ng.gain.exponentialRampToValueAtTime(0.001,t+0.18);
-    ns.connect(nf);nf.connect(ng);ng.connect(drumMaster);ns.start(t);ns.stop(t+0.18);
+    ns.buffer=noiseBuffer;nf.type='highpass';nf.frequency.value=2000*pitchR;
+    ng.gain.setValueAtTime(0.45,t);ng.gain.exponentialRampToValueAtTime(0.001,t+0.18*dec);
+    ns.connect(nf);nf.connect(ng);ng.connect(vg);ns.start(t);ns.stop(t+0.18*dec);
 }
-function play808CP(t){
+function play808CP(t, gainMul, p){
+    const pm=p||instParams808.CP, vol=pm.volume*(gainMul||1), dec=pm.decay, pitchR=Math.pow(2,pm.pitch/1200);
+    const vg=ctx.createGain();vg.gain.value=vol;vg.connect(drumMaster);
     for(let i=0;i<3;i++){const ns=ctx.createBufferSource(),nf=ctx.createBiquadFilter(),ng=ctx.createGain();
-    ns.buffer=noiseBuffer;nf.type='bandpass';nf.frequency.value=1200;nf.Q.value=2;
-    ng.gain.setValueAtTime(0,t+i*0.012);ng.gain.linearRampToValueAtTime(0.5,t+i*0.012+0.002);ng.gain.exponentialRampToValueAtTime(0.001,t+i*0.012+0.04);
-    ns.connect(nf);nf.connect(ng);ng.connect(drumMaster);ns.start(t+i*0.012);ns.stop(t+i*0.012+0.04)}
+    ns.buffer=noiseBuffer;nf.type='bandpass';nf.frequency.value=1200*pitchR;nf.Q.value=2;
+    ng.gain.setValueAtTime(0,t+i*0.012);ng.gain.linearRampToValueAtTime(0.5,t+i*0.012+0.002);ng.gain.exponentialRampToValueAtTime(0.001,t+i*0.012+0.04*dec);
+    ns.connect(nf);nf.connect(ng);ng.connect(vg);ns.start(t+i*0.012);ns.stop(t+i*0.012+0.04*dec)}
     const ns=ctx.createBufferSource(),nf=ctx.createBiquadFilter(),ng=ctx.createGain();
-    ns.buffer=noiseBuffer;nf.type='bandpass';nf.frequency.value=1000;nf.Q.value=1;
-    ng.gain.setValueAtTime(0.4,t+0.04);ng.gain.exponentialRampToValueAtTime(0.001,t+0.3);
-    ns.connect(nf);nf.connect(ng);ng.connect(drumMaster);ns.start(t+0.04);ns.stop(t+0.3);
+    ns.buffer=noiseBuffer;nf.type='bandpass';nf.frequency.value=1000*pitchR;nf.Q.value=1;
+    ng.gain.setValueAtTime(0.4,t+0.04);ng.gain.exponentialRampToValueAtTime(0.001,t+0.3*dec);
+    ns.connect(nf);nf.connect(ng);ng.connect(vg);ns.start(t+0.04);ns.stop(t+0.3*dec);
 }
-function play808Tom(t,freq){
+function play808Tom(t, freq, gainMul, p){
+    const pm=p||{pitch:0,decay:1,volume:1}, vol=pm.volume*(gainMul||1), dec=pm.decay, pitchR=Math.pow(2,pm.pitch/1200);
+    const vg=ctx.createGain();vg.gain.value=vol;vg.connect(drumMaster);
+    const f=freq*pitchR;
     const o=ctx.createOscillator(),g=ctx.createGain();
-    o.frequency.setValueAtTime(freq,t);o.frequency.exponentialRampToValueAtTime(freq*0.5,t+0.12);
-    g.gain.setValueAtTime(0.7,t);g.gain.exponentialRampToValueAtTime(0.001,t+0.25);
-    o.connect(g);g.connect(drumMaster);o.start(t);o.stop(t+0.25);
+    o.frequency.setValueAtTime(f,t);o.frequency.exponentialRampToValueAtTime(f*0.5,t+0.12*dec);
+    g.gain.setValueAtTime(0.7,t);g.gain.exponentialRampToValueAtTime(0.001,t+0.25*dec);
+    o.connect(g);g.connect(vg);o.start(t);o.stop(t+0.25*dec);
 }
-function play808CH(t){
+function play808CH(t, gainMul, p){
+    const pm=p||instParams808.CH, vol=pm.volume*(gainMul||1), dec=pm.decay, pitchR=Math.pow(2,pm.pitch/1200);
+    const vg=ctx.createGain();vg.gain.value=vol;vg.connect(drumMaster);
     const ns=ctx.createBufferSource(),nf=ctx.createBiquadFilter(),ng=ctx.createGain();
-    ns.buffer=noiseBuffer;nf.type='highpass';nf.frequency.value=7000;
-    ng.gain.setValueAtTime(0.3,t);ng.gain.exponentialRampToValueAtTime(0.001,t+0.06);
-    ns.connect(nf);nf.connect(ng);ng.connect(drumMaster);ns.start(t);ns.stop(t+0.06);
-    // Metallic ring
+    ns.buffer=noiseBuffer;nf.type='highpass';nf.frequency.value=7000*pitchR;
+    ng.gain.setValueAtTime(0.3,t);ng.gain.exponentialRampToValueAtTime(0.001,t+0.06*dec);
+    ns.connect(nf);nf.connect(ng);ng.connect(vg);ns.start(t);ns.stop(t+0.06*dec);
     const o1=ctx.createOscillator(),o2=ctx.createOscillator(),og=ctx.createGain();
-    o1.type='square';o1.frequency.value=800;o2.type='square';o2.frequency.value=1340;
-    og.gain.setValueAtTime(0.08,t);og.gain.exponentialRampToValueAtTime(0.001,t+0.04);
-    o1.connect(og);o2.connect(og);og.connect(drumMaster);o1.start(t);o2.start(t);o1.stop(t+0.04);o2.stop(t+0.04);
+    o1.type='square';o1.frequency.value=800*pitchR;o2.type='square';o2.frequency.value=1340*pitchR;
+    og.gain.setValueAtTime(0.08,t);og.gain.exponentialRampToValueAtTime(0.001,t+0.04*dec);
+    o1.connect(og);o2.connect(og);og.connect(vg);o1.start(t);o2.start(t);o1.stop(t+0.04*dec);o2.stop(t+0.04*dec);
 }
-function play808OH(t){
+function play808OH(t, gainMul, p){
+    const pm=p||instParams808.OH, vol=pm.volume*(gainMul||1), dec=pm.decay, pitchR=Math.pow(2,pm.pitch/1200);
+    const vg=ctx.createGain();vg.gain.value=vol;vg.connect(drumMaster);
     const ns=ctx.createBufferSource(),nf=ctx.createBiquadFilter(),ng=ctx.createGain();
-    ns.buffer=noiseBuffer;nf.type='highpass';nf.frequency.value=6000;
-    ng.gain.setValueAtTime(0.35,t);ng.gain.exponentialRampToValueAtTime(0.001,t+0.35);
-    ns.connect(nf);nf.connect(ng);ng.connect(drumMaster);ns.start(t);ns.stop(t+0.35);
+    ns.buffer=noiseBuffer;nf.type='highpass';nf.frequency.value=6000*pitchR;
+    ng.gain.setValueAtTime(0.35,t);ng.gain.exponentialRampToValueAtTime(0.001,t+0.35*dec);
+    ns.connect(nf);nf.connect(ng);ng.connect(vg);ns.start(t);ns.stop(t+0.35*dec);
     const o1=ctx.createOscillator(),o2=ctx.createOscillator(),og=ctx.createGain();
-    o1.type='square';o1.frequency.value=800;o2.type='square';o2.frequency.value=1340;
-    og.gain.setValueAtTime(0.1,t);og.gain.exponentialRampToValueAtTime(0.001,t+0.2);
-    o1.connect(og);o2.connect(og);og.connect(drumMaster);o1.start(t);o2.start(t);o1.stop(t+0.2);o2.stop(t+0.2);
+    o1.type='square';o1.frequency.value=800*pitchR;o2.type='square';o2.frequency.value=1340*pitchR;
+    og.gain.setValueAtTime(0.1,t);og.gain.exponentialRampToValueAtTime(0.001,t+0.2*dec);
+    o1.connect(og);o2.connect(og);og.connect(vg);o1.start(t);o2.start(t);o1.stop(t+0.2*dec);o2.stop(t+0.2*dec);
 }
-function play808CB(t){
+function play808CB(t, gainMul, p){
+    const pm=p||instParams808.CB, vol=pm.volume*(gainMul||1), dec=pm.decay, pitchR=Math.pow(2,pm.pitch/1200);
+    const vg=ctx.createGain();vg.gain.value=vol;vg.connect(drumMaster);
     const o1=ctx.createOscillator(),o2=ctx.createOscillator(),g=ctx.createGain(),f=ctx.createBiquadFilter();
-    o1.type='square';o1.frequency.value=560;o2.type='square';o2.frequency.value=845;
-    f.type='bandpass';f.frequency.value=700;f.Q.value=3;
-    g.gain.setValueAtTime(0.4,t);g.gain.exponentialRampToValueAtTime(0.001,t+0.15);
-    o1.connect(f);o2.connect(f);f.connect(g);g.connect(drumMaster);
-    o1.start(t);o2.start(t);o1.stop(t+0.15);o2.stop(t+0.15);
+    o1.type='square';o1.frequency.value=560*pitchR;o2.type='square';o2.frequency.value=845*pitchR;
+    f.type='bandpass';f.frequency.value=700*pitchR;f.Q.value=3;
+    g.gain.setValueAtTime(0.4,t);g.gain.exponentialRampToValueAtTime(0.001,t+0.15*dec);
+    o1.connect(f);o2.connect(f);f.connect(g);g.connect(vg);
+    o1.start(t);o2.start(t);o1.stop(t+0.15*dec);o2.stop(t+0.15*dec);
 }
-function play808CY(t){
+function play808CY(t, gainMul, p){
+    const pm=p||instParams808.CY, vol=pm.volume*(gainMul||1), dec=pm.decay, pitchR=Math.pow(2,pm.pitch/1200);
+    const vg=ctx.createGain();vg.gain.value=vol;vg.connect(drumMaster);
     const ns=ctx.createBufferSource(),nf=ctx.createBiquadFilter(),ng=ctx.createGain();
-    ns.buffer=noiseBuffer;nf.type='highpass';nf.frequency.value=5000;
-    ng.gain.setValueAtTime(0.25,t);ng.gain.exponentialRampToValueAtTime(0.001,t+0.6);
-    ns.connect(nf);nf.connect(ng);ng.connect(drumMaster);ns.start(t);ns.stop(t+0.6);
+    ns.buffer=noiseBuffer;nf.type='highpass';nf.frequency.value=5000*pitchR;
+    ng.gain.setValueAtTime(0.25,t);ng.gain.exponentialRampToValueAtTime(0.001,t+0.6*dec);
+    ns.connect(nf);nf.connect(ng);ng.connect(vg);ns.start(t);ns.stop(t+0.6*dec);
 }
 
-const drumFns = { BD:play808BD, SD:play808SD, CP:play808CP, LT:t=>play808Tom(t,100), HT:t=>play808Tom(t,180), CH:play808CH, OH:play808OH, CB:play808CB, CY:play808CY };
+const drumFns = {
+    BD:(t,gm)=>play808BD(t,gm,instParams808.BD),
+    SD:(t,gm)=>play808SD(t,gm,instParams808.SD),
+    CP:(t,gm)=>play808CP(t,gm,instParams808.CP),
+    LT:(t,gm)=>play808Tom(t,100,gm,instParams808.LT),
+    HT:(t,gm)=>play808Tom(t,180,gm,instParams808.HT),
+    CH:(t,gm)=>play808CH(t,gm,instParams808.CH),
+    OH:(t,gm)=>play808OH(t,gm,instParams808.OH),
+    CB:(t,gm)=>play808CB(t,gm,instParams808.CB),
+    CY:(t,gm)=>play808CY(t,gm,instParams808.CY)
+};
 
 // Build 808 Grid
 function build808Grid(){
     const grid = document.getElementById('tr808Grid');
     grid.innerHTML = '';
-    // Step numbers
+    // Step numbers (offset for controls column)
     const numRow = document.createElement('div');
     numRow.className = 'tr808-step-nums';
+    numRow.style.paddingLeft = '160px';
     for(let i=0;i<16;i++){const n=document.createElement('div');n.className='tr808-step-num';n.textContent=i+1;numRow.appendChild(n)}
     grid.appendChild(numRow);
     // LED row
     const ledRow = document.createElement('div');
     ledRow.className = 'tr808-leds';
+    ledRow.style.paddingLeft = '160px';
     for(let i=0;i<16;i++){const l=document.createElement('div');l.className='tr808-led';l.innerHTML='<div class="tr808-led-dot" data-step="'+i+'"></div>';ledRow.appendChild(l)}
     grid.appendChild(ledRow);
     // Instrument rows
@@ -603,20 +698,53 @@ function build808Grid(){
         label.style.color = inst.color;
         label.textContent = inst.id;
         row.appendChild(label);
+        // Per-instrument controls
+        const ctrls = document.createElement('div');
+        ctrls.className = 'tr808-inst-controls';
+        const pp = instParams808[inst.id];
+        [{id:'pitch',label:'P',min:-1200,max:1200,val:pp.pitch,step:100},
+         {id:'decay',label:'D',min:20,max:300,val:Math.round(pp.decay*100),step:10},
+         {id:'vol',label:'V',min:0,max:100,val:Math.round(pp.volume*100),step:5}].forEach(k=>{
+            const d=document.createElement('div');d.className='tr808-mini-knob';
+            const inp=document.createElement('input');inp.type='range';inp.min=k.min;inp.max=k.max;inp.value=k.val;inp.step=k.step;
+            inp.dataset.inst=inst.id;inp.dataset.param=k.id;
+            inp.addEventListener('input',function(){
+                const p=instParams808[this.dataset.inst];
+                if(this.dataset.param==='pitch')p.pitch=parseInt(this.value);
+                else if(this.dataset.param==='decay')p.decay=parseInt(this.value)/100;
+                else if(this.dataset.param==='vol')p.volume=parseInt(this.value)/100;
+            });
+            const lbl=document.createElement('label');lbl.textContent=k.label;
+            d.appendChild(inp);d.appendChild(lbl);ctrls.appendChild(d);
+        });
+        row.appendChild(ctrls);
         const steps = document.createElement('div');
         steps.className = 'tr808-steps';
         for(let i=0;i<16;i++){
             const step = document.createElement('div');
-            step.className = 'tr808-step' + (pattern808[inst.id][i] ? ' on' : '');
+            let cls = 'tr808-step';
+            if(pattern808[inst.id][i]) cls += ' on';
+            if(accent808[inst.id][i]) cls += ' accent';
+            step.className = cls;
             step.style.setProperty('--inst-color', inst.color);
             step.style.setProperty('--inst-glow', inst.glow);
             step.dataset.inst = inst.id;
             step.dataset.step = i;
-            step.addEventListener('click', () => {
-                pattern808[inst.id][i] = !pattern808[inst.id][i];
-                step.classList.toggle('on', pattern808[inst.id][i]);
-                // Preview sound on toggle on
-                if(pattern808[inst.id][i]){if(ctx.state==='suspended')ctx.resume();drumFns[inst.id](ctx.currentTime)}
+            step.addEventListener('click', (e) => {
+                if(e.shiftKey){
+                    // Toggle accent
+                    accent808[inst.id][i] = !accent808[inst.id][i];
+                    step.classList.toggle('accent', accent808[inst.id][i]);
+                } else {
+                    pattern808[inst.id][i] = !pattern808[inst.id][i];
+                    step.classList.toggle('on', pattern808[inst.id][i]);
+                    if(pattern808[inst.id][i]){if(ctx.state==='suspended')ctx.resume();drumFns[inst.id](ctx.currentTime,1)}
+                }
+            });
+            step.addEventListener('contextmenu', (e) => {
+                e.preventDefault();
+                accent808[inst.id][i] = !accent808[inst.id][i];
+                step.classList.toggle('accent', accent808[inst.id][i]);
             });
             steps.appendChild(step);
         }
@@ -625,24 +753,63 @@ function build808Grid(){
     });
 }
 
-// Sequencer
+// Sequencer with swing, accent, and A/B chaining
+let playingBank = 'A'; // which bank is currently sounding
+let totalStep808 = 0; // 0-31 in chain mode, 0-15 otherwise
+
+function getPlayingPattern(){
+    return patternBanks[playingBank].pattern;
+}
+function getPlayingAccent(){
+    return patternBanks[playingBank].accent;
+}
+
 function step808Tick(){
     if(!isPlaying808) return;
     const t = ctx.currentTime;
+    const pat = getPlayingPattern();
+    const acc = getPlayingAccent();
+    const stepInPat = currentStep808 % 16;
+
     // Play active instruments for this step
     instruments808.forEach(inst => {
-        if(pattern808[inst.id][currentStep808]){
-            drumFns[inst.id](t);
-            if(midiRecording){logMidiOn(DRUM_MIDI_MAP[inst.id],100,9);midiEvents.push({time:ctx.currentTime-midiRecStartTime+0.05,type:'off',note:DRUM_MIDI_MAP[inst.id],velocity:0,channel:9})}
+        if(pat[inst.id][stepInPat]){
+            const gainMul = acc[inst.id][stepInPat] ? 1.5 : 1.0;
+            drumFns[inst.id](t, gainMul);
+            if(midiRecording){
+                const vel = acc[inst.id][stepInPat] ? 127 : 100;
+                logMidiOn(DRUM_MIDI_MAP[inst.id],vel,9);
+                midiEvents.push({time:ctx.currentTime-midiRecStartTime+0.05,type:'off',note:DRUM_MIDI_MAP[inst.id],velocity:0,channel:9});
+            }
         }
     });
     // Visual: update LEDs
     document.querySelectorAll('.tr808-led-dot').forEach((d,i) => {
-        d.classList.toggle('active', i === currentStep808);
+        d.classList.toggle('active', i === stepInPat);
     });
-    currentStep808 = (currentStep808 + 1) % 16;
+    // Update bank LEDs during chained playback
+    if(chainMode){
+        document.getElementById('tr808LedA').classList.toggle('active', playingBank==='A');
+        document.getElementById('tr808LedB').classList.toggle('active', playingBank==='B');
+    }
+
+    totalStep808++;
+    currentStep808++;
+    const totalSteps = chainMode ? 32 : 16;
+
+    if(chainMode && currentStep808 >= 16){
+        currentStep808 = 0;
+        playingBank = playingBank === 'A' ? 'B' : 'A';
+    } else if(!chainMode && currentStep808 >= 16){
+        currentStep808 = 0;
+    }
+    if(totalStep808 >= totalSteps) totalStep808 = 0;
+
+    // Swing: delay odd steps (1, 3, 5, 7, 9, 11, 13, 15)
     const msPerStep = (60000 / bpm808) / 4;
-    stepTimeout808 = setTimeout(step808Tick, msPerStep);
+    const isOddStep = (totalStep808 % 2 === 1);
+    const swingDelay = isOddStep ? msPerStep * (swing808 / 100) * 0.33 : 0;
+    stepTimeout808 = setTimeout(step808Tick, msPerStep + swingDelay);
 }
 
 function start808(){
@@ -650,6 +817,8 @@ function start808(){
     if(ctx.state==='suspended') ctx.resume();
     isPlaying808 = true;
     currentStep808 = 0;
+    totalStep808 = 0;
+    playingBank = chainMode ? 'A' : activeBank;
     document.getElementById('tr808PlayBtn').classList.add('active');
     step808Tick();
 }
@@ -659,14 +828,21 @@ function stop808(){
     document.getElementById('tr808PlayBtn').classList.remove('active');
     document.querySelectorAll('.tr808-led-dot').forEach(d => d.classList.remove('active'));
     currentStep808 = 0;
+    totalStep808 = 0;
+    // Reset bank LEDs
+    document.getElementById('tr808LedA').classList.toggle('active', activeBank==='A');
+    document.getElementById('tr808LedB').classList.toggle('active', activeBank==='B');
 }
 
 document.getElementById('tr808PlayBtn').addEventListener('click', () => {
     isPlaying808 ? stop808() : start808();
 });
 document.getElementById('tr808ClearBtn').addEventListener('click', () => {
-    instruments808.forEach(inst => pattern808[inst.id].fill(false));
-    document.querySelectorAll('.tr808-step').forEach(s => s.classList.remove('on'));
+    instruments808.forEach(inst => {
+        pattern808[inst.id].fill(false);
+        accent808[inst.id].fill(false);
+    });
+    document.querySelectorAll('.tr808-step').forEach(s => {s.classList.remove('on');s.classList.remove('accent')});
 });
 document.getElementById('tr808Tempo').addEventListener('input', function(){
     bpm808 = parseInt(this.value);
@@ -675,7 +851,81 @@ document.getElementById('tr808Tempo').addEventListener('input', function(){
 document.getElementById('tr808Vol').addEventListener('input', function(){
     drumMaster.gain.value = this.value / 100;
 });
+document.getElementById('tr808Swing').addEventListener('input', function(){
+    swing808 = parseInt(this.value);
+    document.getElementById('tr808SwingVal').textContent = swing808 + '%';
+});
 
+// A/B Bank switching
+function switchBank(bank){
+    activeBank = bank;
+    pattern808 = patternBanks[bank].pattern;
+    accent808 = patternBanks[bank].accent;
+    document.getElementById('tr808BankA').classList.toggle('active', bank==='A');
+    document.getElementById('tr808BankB').classList.toggle('active', bank==='B');
+    if(!isPlaying808){
+        document.getElementById('tr808LedA').classList.toggle('active', bank==='A');
+        document.getElementById('tr808LedB').classList.toggle('active', bank==='B');
+    }
+    build808Grid();
+}
+document.getElementById('tr808BankA').addEventListener('click', ()=>switchBank('A'));
+document.getElementById('tr808BankB').addEventListener('click', ()=>switchBank('B'));
+document.getElementById('tr808ChainBtn').addEventListener('click', function(){
+    chainMode = !chainMode;
+    this.classList.toggle('active', chainMode);
+    this.textContent = chainMode ? 'Chain ON' : 'Chain';
+});
+
+// Pattern Presets
+const presets808 = {
+    'Boom Bap': {BD:[1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0],SD:[0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0],CH:[1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0],OH:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]},
+    'Trap': {BD:[1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0],SD:[0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0],CH:[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],OH:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0],CP:[0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0]},
+    'House': {BD:[1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0],CH:[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0],OH:[0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0],CP:[0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0]},
+    'Reggaeton': {BD:[1,0,0,1,0,0,1,0,0,0,1,0,0,0,1,0],SD:[0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0],CH:[1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0],CP:[0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0]},
+    'Disco': {BD:[1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0],SD:[0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0],CH:[1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0],OH:[0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},
+    'Bossa Nova': {BD:[1,0,0,0,0,0,1,0,0,1,0,0,0,0,1,0],SD:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],CH:[1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0],CB:[1,0,0,1,0,0,1,0,0,0,1,0,0,1,0,0],LT:[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0]},
+    'Half-Time': {BD:[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],SD:[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0],CH:[1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0],OH:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]},
+    'Empty': {}
+};
+
+function loadPreset(name){
+    const preset = presets808[name];
+    // Clear current bank
+    instruments808.forEach(inst=>{
+        pattern808[inst.id].fill(false);
+        accent808[inst.id].fill(false);
+    });
+    // Load preset data
+    if(preset){
+        Object.keys(preset).forEach(id=>{
+            if(pattern808[id]){
+                for(let i=0;i<16;i++) pattern808[id][i] = !!preset[id][i];
+            }
+        });
+    }
+    build808Grid();
+    // Update active preset button
+    document.querySelectorAll('.tr808-preset-btn').forEach(b=>b.classList.toggle('active',b.dataset.preset===name));
+}
+
+function buildPresetButtons(){
+    const container = document.getElementById('tr808Presets');
+    container.innerHTML = '';
+    const lbl = document.createElement('span');
+    lbl.className = 'tr808-presets-label';
+    lbl.textContent = 'Presets';
+    container.appendChild(lbl);
+    Object.keys(presets808).forEach(name=>{
+        const btn = document.createElement('button');
+        btn.className = 'tr808-preset-btn';
+        btn.textContent = name;
+        btn.dataset.preset = name;
+        btn.addEventListener('click', ()=>loadPreset(name));
+        container.appendChild(btn);
+    });
+}
+buildPresetButtons();
 build808Grid();
 
 // ==================== EFFECTS PEDALBOARD ====================
