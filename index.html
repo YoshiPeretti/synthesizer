@@ -417,6 +417,7 @@ input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;hei
             <span class="looper-time" id="looperTime">--</span>
             <button class="looper-master-btn" id="looperStopBtn">Stop</button>
             <button class="looper-master-btn" id="looperClearBtn">Clear</button>
+            <button class="looper-master-btn" id="looperSaveBtn" style="color:#22cc44;border-color:#1a3a1a">Save WAV</button>
         </div>
     </div>
     <div class="looper-tracks" id="looperTracks"></div>
@@ -1361,6 +1362,67 @@ buildLooperUI();
 
 document.getElementById('looperStopBtn').addEventListener('click', stopAllLoops);
 document.getElementById('looperClearBtn').addEventListener('click', clearAllLoops);
+document.getElementById('looperSaveBtn').addEventListener('click', exportLoopWAV);
+
+function exportLoopWAV(){
+    // Find all unmuted tracks with audio
+    const tracks = loopState.tracks.filter(t => t.hasAudio && !t.isMuted && t.buffer);
+    if(tracks.length === 0) return;
+    const sr = ctx.sampleRate;
+    const len = loopState.masterSamples;
+    if(len === 0) return;
+    // Mix down all tracks into stereo
+    const mixL = new Float32Array(len);
+    const mixR = new Float32Array(len);
+    tracks.forEach(t => {
+        const bL = t.buffer.getChannelData(0);
+        const bR = t.buffer.numberOfChannels > 1 ? t.buffer.getChannelData(1) : bL;
+        const bLen = t.buffer.length;
+        for(let i = 0; i < len; i++){
+            mixL[i] += bL[i % bLen];
+            mixR[i] += bR[i % bLen];
+        }
+    });
+    // Clamp to [-1, 1]
+    for(let i = 0; i < len; i++){
+        mixL[i] = Math.max(-1, Math.min(1, mixL[i]));
+        mixR[i] = Math.max(-1, Math.min(1, mixR[i]));
+    }
+    // Encode WAV
+    const bytesPerSample = 2; // 16-bit
+    const numChannels = 2;
+    const dataSize = len * numChannels * bytesPerSample;
+    const buffer = new ArrayBuffer(44 + dataSize);
+    const view = new DataView(buffer);
+    function writeStr(off, str){ for(let i=0;i<str.length;i++) view.setUint8(off+i, str.charCodeAt(i)); }
+    writeStr(0, 'RIFF');
+    view.setUint32(4, 36 + dataSize, true);
+    writeStr(8, 'WAVE');
+    writeStr(12, 'fmt ');
+    view.setUint32(16, 16, true);
+    view.setUint16(20, 1, true); // PCM
+    view.setUint16(22, numChannels, true);
+    view.setUint32(24, sr, true);
+    view.setUint32(28, sr * numChannels * bytesPerSample, true);
+    view.setUint16(32, numChannels * bytesPerSample, true);
+    view.setUint16(34, bytesPerSample * 8, true);
+    writeStr(36, 'data');
+    view.setUint32(40, dataSize, true);
+    let off = 44;
+    for(let i = 0; i < len; i++){
+        view.setInt16(off, Math.round(mixL[i] * 32767), true); off += 2;
+        view.setInt16(off, Math.round(mixR[i] * 32767), true); off += 2;
+    }
+    const blob = new Blob([buffer], {type:'audio/wav'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'loop-export.wav';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
 
 function updateLooperUI() {
     const panel = document.getElementById('looperPanel');
